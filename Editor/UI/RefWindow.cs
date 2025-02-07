@@ -3,7 +3,10 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Reflection;
+using Debug = UnityEngine.Debug;
 
 
 namespace LongXinTool
@@ -12,7 +15,7 @@ namespace LongXinTool
     {
         //路径 
         private string ProjectDir =>Application.dataPath + "/..";
-        private string DescriptionPath =>RefWindowCache.ROOT_DIR + "/说明.txt";
+        private string DescriptionPath =>Path.Combine(ProjectDir, RefWindowCache.ROOT_DIR + "/说明.txt");
 
         //控件 
         private RefWindowCache cache;
@@ -348,7 +351,11 @@ namespace LongXinTool
             genericMenu.AddSeparator("");
             genericMenu.AddItem(new GUIContent("打开工程目录"), false, () => { Application.OpenURL(ProjectDir); });
             genericMenu.AddSeparator("");
-            genericMenu.AddItem(new GUIContent("查看说明"), false, ()=>{Application.OpenURL(DescriptionPath);});
+            genericMenu.AddItem(new GUIContent("查看说明"), false, () =>
+            {
+                //Process.Start(path);
+                Application.OpenURL(DescriptionPath);
+            });
             genericMenu.ShowAsContext();
         }
       
