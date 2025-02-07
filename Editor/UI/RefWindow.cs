@@ -11,7 +11,8 @@ namespace LongXinTool
     internal class RefWindow : EditorWindow
     {
         //路径 
-        private string ProjectDir;
+        private string ProjectDir =>Application.dataPath + "/..";
+        private string DescriptionPath =>RefWindowCache.ROOT_DIR + "/说明.txt";
 
         //控件 
         private RefWindowCache cache;
@@ -77,7 +78,7 @@ namespace LongXinTool
         }
         private void InitDir()
         {
-            ProjectDir = Application.dataPath + "/..";
+            
         }
         private void GetControls()
         {
@@ -346,8 +347,8 @@ namespace LongXinTool
             }
             genericMenu.AddSeparator("");
             genericMenu.AddItem(new GUIContent("打开工程目录"), false, () => { Application.OpenURL(ProjectDir); });
-            //genericMenu.AddSeparator("");
-            //genericMenu.AddItem(new GUIContent("打开Excel文件夹"), false, OpenExcelDir);
+            genericMenu.AddSeparator("");
+            genericMenu.AddItem(new GUIContent("查看说明"), false, ()=>{Application.OpenURL(DescriptionPath);});
             genericMenu.ShowAsContext();
         }
       

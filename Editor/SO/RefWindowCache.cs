@@ -9,8 +9,7 @@ namespace LongXinTool
 {
     public class RefWindowCache : ScriptableObject
     {
-       //private const string ROOT_DIR = "Packages/com.longxin.refwindow/Editor";
-        private const string ROOT_DIR = "Packages/com.longxin.refwindow/Editor";
+        public const string ROOT_DIR = "Packages/com.longxin.refwindow/Editor";
         private const string CachePath = ROOT_DIR + "/SO/RefWindowCache.asset";
         public const string XMLPath = ROOT_DIR + "/UI/RefWindow.uxml";
 
