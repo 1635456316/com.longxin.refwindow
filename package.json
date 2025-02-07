@@ -1,0 +1,14 @@
+{
+  "name": "com.longxin.refwindow",
+  "displayName": "RefWindowFor2019",
+  "version": "1.0.0",
+  "unity": "2019.3",
+  "keywords": [],
+  "description": "\u5f15\u7528\u7a97\u53e3",
+  "relatedPackages": {},
+  "type": "tool",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/myeditorpackage.git"
+  }
+}

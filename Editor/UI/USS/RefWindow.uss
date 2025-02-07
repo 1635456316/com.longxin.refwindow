@@ -1,0 +1,35 @@
+ObjectField > VisualElement {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#inputField Label {
+    padding-left: 1px;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -unity-text-align: middle-left;
+    font-size: 15px;
+    color: rgb(54, 222, 226);
+}
+
+#objNameField > Label {
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    height: 19px;
+    padding-left: 5px;
+    -unity-text-align: middle-left;
+}
+
+ObjectField ObjectFieldSelector {
+    display: none;
+}

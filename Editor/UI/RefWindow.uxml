@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="Top">
+        <Style src="USS/RefWindow.uss" />
+        <ui:VisualElement name="RefField" style="width: 100%; flex-direction: row; flex-wrap: wrap;" />
+        <ui:VisualElement name="objNameField" style="width: 100%;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="Bottom" style="flex-grow: 1; flex-direction: column-reverse;">
+        <Style src="USS/RefWindow.uss" />
+        <ui:Button text="保存" name="BtnSave" style="height: 19px;" />
+        <uie:ObjectField name="inputField" style="height: 25px;" />
+        <ui:VisualElement style="height: 19px; flex-direction: row;">
+            <uie:ToolbarSearchField focusable="true" name="searchField" style="width: 80%;" />
+            <ui:Button text="搜索" name="searchBtn" style="width: 18%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="height: 30px; display: none;" />
+        <ui:VisualElement name="menuIcon" style="height: 29px; width: 32px; left: 4px; background-image: url(&apos;/Packages/com.longxin.refwindow/Editor/UI/menuIcon.png&apos;);" />
+    </ui:VisualElement>
+</ui:UXML>
