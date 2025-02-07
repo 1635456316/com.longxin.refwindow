@@ -28,7 +28,7 @@ namespace LongXinTool
         private string defaultLabel = "保存或退出后删除";
         private string inputFieldText = "拖到这里生成引用";
 
-        [MenuItem("My Tool/引用窗口")]
+        [MenuItem("Tools/引用窗口")]
         public static void ShowExample()
         {
             //Debug.Log("打开引用窗口");
