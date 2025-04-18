@@ -1,2 +1,2 @@
 # com.longxin.refwindow
-Unity简单的引用窗口
+Unity资产/路径引用窗口
