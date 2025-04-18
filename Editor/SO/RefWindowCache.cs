@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 
 namespace LongXinTool
@@ -10,7 +12,7 @@ namespace LongXinTool
     public class RefWindowCache : ScriptableObject
     {
         public const string ROOT_DIR = "Packages/com.longxin.refwindow/Editor";
-        private const string CachePath = ROOT_DIR + "/SO/RefWindowCache.asset";
+        private const string CachePath = "Library/RefWindowCache.asset";
         public const string XMLPath = ROOT_DIR + "/UI/RefWindow.uxml";
 
         public List<Object> refList;
@@ -38,7 +40,7 @@ namespace LongXinTool
             instance = CreateInstance<RefWindowCache>();
             instance.refList = new List<Object>();
             instance.objNameList = new List<string>();
-            AssetDatabase.CreateAsset(instance, CachePath);
+            InternalEditorUtility.SaveToSerializedFileAndForget(new[] { instance }, CachePath, true);
         }
         private static void ReadFile()
         {
@@ -65,8 +67,15 @@ namespace LongXinTool
                     i--;
                 }
             }
-            InternalEditorUtility.SaveToSerializedFileAndForget(new[] { this }, CachePath, true);
+            InternalEditorUtility.SaveToSerializedFileAndForget(new[] { Instance }, CachePath, true);
         }
+
+        private void OnDestroy()
+        {
+            SaveData();
+            instance = null;
+        }
+
         public void AddRefList()
         {
             refList.Add(null);

@@ -18,7 +18,7 @@ namespace LongXinTool
         private string DescriptionPath =>Path.Combine(ProjectDir, RefWindowCache.ROOT_DIR + "/说明.txt");
 
         //控件 
-        private RefWindowCache cache;
+        private RefWindowCache cache => RefWindowCache.Instance;
         private VisualElement root;
         private VisualElement menuIcon;
         private VisualElement RefField;
@@ -146,7 +146,6 @@ namespace LongXinTool
         }
         private void Init()
         {
-            cache = RefWindowCache.Instance;
             RefreshRefList();
             RefreshObjNameList();
             searchField.value = cache.searchFIeldValue;
@@ -355,6 +354,11 @@ namespace LongXinTool
             {
                 //Process.Start(path);
                 Application.OpenURL(DescriptionPath);
+            });
+            genericMenu.AddSeparator("");
+            genericMenu.AddItem(new GUIContent("解锁中文输入"), false, () =>
+            {
+                Input.imeCompositionMode = IMECompositionMode.On;
             });
             genericMenu.ShowAsContext();
         }
